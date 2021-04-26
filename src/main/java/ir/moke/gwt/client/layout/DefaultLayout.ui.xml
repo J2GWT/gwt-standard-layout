@@ -1,0 +1,58 @@
+<!--
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+        @external .gwt-SplitLayoutPanel-HDragger;
+        .gwt-SplitLayoutPanel-HDragger {
+        background-color: rgba(134, 134, 134, 0.255);
+        cursor: col-resize;
+        width: 1px !important;
+        }
+
+        .top_nav {
+        background-color: blue ;
+        }
+        .content {
+        background-color: yellow ;
+        }
+    </ui:style>
+    <g:DockLayoutPanel unit='PX' height="100%">
+        <g:north size="60">
+            <g:FlowPanel styleName="{style.top_nav}">
+                <g:HTML>header</g:HTML>
+            </g:FlowPanel>
+        </g:north>
+        <g:center>
+<!--            <g:FlowPanel styleName="{style.content}">-->
+<!--                <g:Label>Body</g:Label>-->
+<!--            </g:FlowPanel>-->
+
+                <g:SplitLayoutPanel>
+                    <g:west size="320">
+                        <g:HTML>Left</g:HTML>
+                    </g:west>
+                    <g:center>
+                        <g:HTML>Center</g:HTML>
+                    </g:center>
+                    <g:east size="460">
+                        <g:HTML>Right</g:HTML>
+                    </g:east>
+                </g:SplitLayoutPanel>
+        </g:center>
+    </g:DockLayoutPanel>
+</ui:UiBinder>
+
